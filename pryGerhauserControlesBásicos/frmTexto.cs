@@ -12,6 +12,7 @@ namespace pryGerhauserControlesBásicos
 {
     public partial class frmTexto : Form
     {
+        string varcontenido;
         public frmTexto()
         {
             InitializeComponent();
@@ -35,6 +36,34 @@ namespace pryGerhauserControlesBásicos
                 txtEscribir.ForeColor = Color.Red;
             }
                 
+        }
+
+        
+
+        private void btnEscribir_Click(object sender, EventArgs e)
+        {
+            lblEscribirCheck.Text = "";
+
+            if (chkPicante.Checked == true)
+            {
+                lblEscribirCheck.Text = lblEscribirCheck.Text + " Boca " + chkPicante.Text;
+                
+            }
+            if (chkFrio.Checked == true)
+            {
+                lblEscribirCheck.Text = lblEscribirCheck.Text + " River " + chkFrio.Text;
+            }
+            if (chkMilanesa.Checked == true)
+            {
+                lblEscribirCheck.Text += " " + chkMilanesa.Text;
+            }
+
+            cboAdicional.Items.Add(lblEscribirCheck.Text);  
+        }
+
+        private void cboAdicional_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblEscribirCheck.Text = cboAdicional.SelectedItem.ToString();   
         }
     }
 }
