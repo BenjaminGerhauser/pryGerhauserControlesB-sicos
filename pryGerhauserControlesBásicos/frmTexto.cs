@@ -12,7 +12,10 @@ namespace pryGerhauserControlesBásicos
 {
     public partial class frmTexto : Form
     {
-        string varcontenido;
+        string varcontenido, vartexto;
+        string[] Cosas;
+        bool varCorrobar;
+        string[] vecDatos;
         public frmTexto()
         {
             InitializeComponent();
@@ -28,17 +31,17 @@ namespace pryGerhauserControlesBásicos
             if (optAzul.Checked == true)
             {
                 lblCopia.ForeColor = Color.Blue;
-                txtEscribir.ForeColor = Color.Blue;  
+                txtEscribir.ForeColor = Color.Blue;
             }
             if (optRojo.Checked == true)
             {
                 lblCopia.ForeColor = Color.Red;
                 txtEscribir.ForeColor = Color.Red;
             }
-                
+
         }
 
-        
+
 
         private void btnEscribir_Click(object sender, EventArgs e)
         {
@@ -47,7 +50,7 @@ namespace pryGerhauserControlesBásicos
             if (chkPicante.Checked == true)
             {
                 lblEscribirCheck.Text = lblEscribirCheck.Text + " Boca " + chkPicante.Text;
-                
+
             }
             if (chkFrio.Checked == true)
             {
@@ -58,8 +61,12 @@ namespace pryGerhauserControlesBásicos
                 lblEscribirCheck.Text += " " + chkMilanesa.Text;
             }
 
-            cboAdicional.Items.Add(lblEscribirCheck.Text);  
+
+           
+            cboAdicional.Items.Add(lblEscribirCheck.Text);
         }
+
+        
 
         private void cboAdicional_SelectedIndexChanged(object sender, EventArgs e)
         {
